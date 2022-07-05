@@ -113,6 +113,12 @@ export default class DataTableComponent extends Component {
       }
 
       const data = yield this.store.query(this.args.modelName, options);
+      const userIds = data.map((e) => e.id);
+      yield this.store.query("acl", {
+        filter: {
+          user__in: userIds.join(","),
+        },
+      });
       this.numPages = data.meta.pagination?.pages;
       this.entryCount = data.meta.pagination?.count;
 
