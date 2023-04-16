@@ -8,25 +8,6 @@ export default class App extends Application {
   modulePrefix = config.modulePrefix;
   podModulePrefix = config.podModulePrefix;
   Resolver = Resolver;
-
-  constructor(...args) {
-    super(...args);
-
-    this.engines = {
-      "ember-emeis": {
-        dependencies: {
-          services: [
-            "store",
-            "fetch",
-            "intl",
-            "notification",
-            "router",
-            "emeis-options",
-          ],
-        },
-      },
-    };
-  }
 }
 
 loadInitializers(App, config.modulePrefix);

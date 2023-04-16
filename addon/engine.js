@@ -9,17 +9,6 @@ const { modulePrefix } = config;
 export default class EmberEmeisEngine extends Engine {
   modulePrefix = modulePrefix;
   Resolver = Resolver;
-
-  dependencies = {
-    services: [
-      "store",
-      "fetch",
-      "intl",
-      "notification",
-      "router",
-      "emeis-options",
-    ],
-  };
 }
 
 loadInitializers(EmberEmeisEngine, modulePrefix);
